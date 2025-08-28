@@ -402,3 +402,4 @@ Mostra picos de procura no verão e em meses de férias.
 - Scripts ETL (`extract_data.py`, `transform_data.py`, `load_gcp.py`).  
 - Shell scripts (`run_pipeline.sh`, `ingest_to_hive.sh`).  
 - Consultas (`analyses.sql`).  
+# inside-airbnb-gcp-hive
