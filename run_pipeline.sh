@@ -10,7 +10,7 @@ echo "2. Transforming data..."
 python transform_data.py
 
 echo "3. Loading data to GCS..."
-python load_data.py
+python load_gcp.py
 
 echo "4. Ingesting to Hive..."
 bash ingest_to_hive.sh
