@@ -401,4 +401,33 @@ Mostra picos de procura no verão e em meses de férias.
 - Scripts Hive (`create_database.hql`, `create_tables.hql`).  
 - Scripts ETL (`extract_data.py`, `transform_data.py`, `load_gcp.py`).  
 - Shell scripts (`run_pipeline.sh`, `ingest_to_hive.sh`).  
-- Consultas (`analyses.sql`). 
+- Consultas (`analyses.sql`).
+
+---
+
+## 10. Como replicar?
+
+### Instalar dependências
+pip install -r requirements.txt
+
+### Configurar Google Cloud SDK
+gcloud auth login
+gcloud config set project planar-alliance-467623-f1 -- Altera pro ID do teu projeto assim como no load_gcp.py
+
+### Configurar variáveis de ambiente
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/credentials.json"
+
+### Executar pipeline completo
+bash run_pipeline.sh
+
+### Ou executar etapa por etapa
+python extract_data.py
+python transform_data.py
+python load_gcp.py
+bash ingest_to_hive.sh
+
+### Executar consultas SQL no Hive
+gcloud dataproc jobs submit hive \
+  --cluster airbnb-hive-clusterx \
+  --region us-central1 \
+  --file analyses.sql
