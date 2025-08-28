@@ -418,16 +418,22 @@ gcloud config set project planar-alliance-467623-f1 -- Altera pro ID do teu proj
 export GOOGLE_APPLICATION_CREDENTIALS="path/to/credentials.json"
 
 ### Executar pipeline completo
-bash run_pipeline.sh
+```bash
+run_pipeline.sh
+```
 
 ### Ou executar etapa por etapa
+```python
 python extract_data.py
 python transform_data.py
 python load_gcp.py
 bash ingest_to_hive.sh
+```
 
 ### Executar consultas SQL no Hive
+```bash
 gcloud dataproc jobs submit hive \
   --cluster airbnb-hive-clusterx \
   --region us-central1 \
   --file analyses.sql
+```
