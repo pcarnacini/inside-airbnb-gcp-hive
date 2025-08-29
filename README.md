@@ -9,6 +9,7 @@ O objetivo é aplicar um pipeline completo de **ETL + ingestão em Hive + consul
 
 ## 2. Fontes de Dados
 - **Inside Airbnb (dados abertos):**
+  - https://insideairbnb.com/explore/
   - `listings.csv` → informações de anúncios e anfitriões  
   - `calendar.csv` → disponibilidade diária e preços  
   - `reviews.csv` → avaliações dos hóspedes  
